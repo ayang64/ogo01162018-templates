@@ -1,0 +1,40 @@
+{{template "page-head.html" .}}
+
+
+{{with .Statement}}
+	<h1>Statement For {{.Name}}</h1>
+	<table style='font-family: monospace;'>
+		<tr>
+			<td>
+				Time
+			</td>
+			<td>
+				Description
+			</td>
+			<td>
+				Tx Amount
+			</td>
+			<td>
+				Balance
+			</td>
+		</tr>
+	{{range .Ledger}}
+		<tr>
+			<td>
+				{{.Timestamp}}
+			</td>
+			<td>
+				{{.Description}}
+			</td>
+			<td align='right'>
+				{{.Amount}}
+			</td>
+			<td align='right'>
+				{{.Balance}}
+			</td>
+		</tr>
+	{{end}}
+	</table>
+{{end}}
+
+{{template "page-foot.html" .}}

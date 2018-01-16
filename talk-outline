@@ -1,0 +1,31 @@
+- Templates are cool:
+	- you can separate the act of gatering data and rendering it
+	- go takes advantage of reflection to make it type flexible
+	- html templates ensure the output is safe in a context sensitive way. 
+	- uses reflect(ion)
+
+- Setup Database - 10 minutes
+
+- Demonstrate minimal database/sql operation - 20 minutes?
+  - this might include using flag, log, and io?
+
+- now introduce templates - 30 - 45mins?
+	- build template to render output
+	- demonstration continditional output
+	- {{range}}{{end}} -- {{range}}{{end}}{{else}}
+	- {{with val}}{{.}}{{end}}
+	- {{ "value" | func }} -- passes the output of the previous expression to the
+		end of the next expression.
+	- demonstrate ways to call methods:
+		- directly call method associated with type
+		- "call" against a stored function
+		- adding a global function using funcmap
+	- demonstrate difference between Execute and ExecuteTemplate
+	- demonstrate loading template from files
+	- multiple named templates
+	 	- how all routines return *template.Template so that you can string
+		  calls together like  template.New().Parse().Funcs().ParseFiles()...
+
+- BONUS ROUND - 15 mins??
+	- build a simple http
+	- lets do it in HTML

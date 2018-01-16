@@ -1,0 +1,12 @@
+To: {{.Email}}
+Subject: Account Statement for #{{.ID}}
+
+Hello, {{.Name}}, your current statement is as follows:
+
+{{currentdate}}
+
+{{range $i, $j := .Ledger -}}
+	{{$i}}
+{{else}}
+	No transactions!
+{{end}}
